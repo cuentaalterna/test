@@ -1,0 +1,16 @@
+<div class="header" [ngClass]="isDetailPage() ? 'space-between' : 'space-pull-right '">
+  @if(isDetailPage()){
+    <a mat-fab extended routerLink="/">
+      <mat-icon>arrow_back</mat-icon>
+      {{'back' | translate}}
+    </a>
+  } 
+
+  <div class="header__lang">
+    <div class="header__lang--label">{{'language'| translate}} :</div>
+    <mat-button-toggle-group name="fontStyle" [value]="currentValue" (change)="changeLang($event)" aria-label="Font Style">
+      <mat-button-toggle value="es">Es</mat-button-toggle>
+      <mat-button-toggle value="en">En</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+</div>

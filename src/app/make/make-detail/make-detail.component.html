@@ -1,0 +1,33 @@
+<app-header [isDetailPage]="true"></app-header>
+
+@let make = make$ | async;
+
+@if(make){
+  <div>
+    <mat-card class="detail-card">
+      <mat-card-title>{{'detail-of' | translate}} {{ make.Make_Name }}</mat-card-title>
+
+      <section class="section">
+        <h3>{{'detail-of' | translate}} {{'vehicles-type' | translate}}</h3>
+        <ul>
+          @for (item of vehicleTypes$ | async; track $index) {
+            <li>{{ item.VehicleTypeName }}</li>
+          }
+        </ul>
+      </section>
+
+      <section class="section">
+        <h3>{{ 'available-models' | translate}}</h3>
+        <ul>
+          @for (model of models$ | async; track $index) {
+            <li>
+              {{ model.Model_Name }} (ID: {{ model.Model_ID }})
+            </li>
+          }
+        </ul>
+      </section>
+      
+
+    </mat-card>
+  </div>
+} 

@@ -1,0 +1,7 @@
+@let loading = ldrLoadingService.isLoading();
+
+@if(loading){
+    <app-loading></app-loading>
+} @else{
+    <router-outlet></router-outlet>
+}

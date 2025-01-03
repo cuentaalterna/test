@@ -1,0 +1,34 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  gap: 1rem;
+  &__lang {
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__loading {
+    display: flex;
+    justify-content: center;
+  }
+  &__scroll {
+    height: 40vh;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+}
+
+.virtual {
+  &__viewport {
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+  &__card {
+    margin: 8px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 1em;
+  }
+}

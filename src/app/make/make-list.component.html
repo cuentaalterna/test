@@ -1,0 +1,20 @@
+<div class="list">
+  <app-header></app-header>
+
+  <mat-form-field appearance="outline">
+    <mat-label>{{'search-brand' | translate}}</mat-label>
+    <input matInput [value]="filterText()" (input)="filterText.set($any($event.target).value)"
+      placeholder="{{'search-brand' | translate}}" />
+  </mat-form-field>
+
+
+  <div>{{'list'| translate}}</div>
+  <div class="list__scroll virtual">
+    <cdk-virtual-scroll-viewport itemSize="40" class="virtual__viewport">
+        <mat-card class="virtual__card" (click)="onSelectMake(make)" *cdkVirtualFor="let make of filteredMakes()" >
+          <mat-card-title>{{ make.Make_Name }}</mat-card-title>
+          <mat-card-subtitle>ID: {{ make.Make_ID }}</mat-card-subtitle>
+        </mat-card>
+    </cdk-virtual-scroll-viewport>
+  </div>
+</div>
